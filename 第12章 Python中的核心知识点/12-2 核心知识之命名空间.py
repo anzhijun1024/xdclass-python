@@ -28,3 +28,69 @@ NameError: name 'xxx' is not defined。
 4、最后在内置命名空间中搜索
 
 """
+
+msg = 'msg'
+def my_func():
+    name = 'wiggen'
+    def func_son():
+        name= 'xdclass'
+        print('内部方法的名字：',name)
+
+    # 调用内部函数
+    func_son()
+    print(name)
+
+my_func()
+
+
+
+
+a= 1
+def my_func(str):
+    global a
+    if a ==1:
+        print(str)
+        a=24
+
+my_func('file')
+print(a)
+
+'''
+
+命名空间的访问
+局部命名空间的访问
+局部命名空间可以 locals() 来访问。
+'''
+def my_func1():
+    a=52
+    b=2
+    print(locals())
+
+
+print(type(my_func1()))
+d= my_func1()
+print(d)
+
+
+a=1
+b=3
+print(globals())
+
+
+'''
+locals 与 globals 之间的区别
+locals 是只读的，但globals是可读写的
+
+'''
+
+
+def my_func():
+    x=123
+    print(locals())
+    locals()['x']=222
+    print(locals())
+    print('x=',x)
+y=234
+my_func()
+globals()['y']=111
+print('y=',y)
