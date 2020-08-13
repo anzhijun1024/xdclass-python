@@ -1,1 +1,1 @@
-__all__ = ['class5.py', 'class5_import.py']
+__all__ = ['class5','class5_import']

@@ -1,4 +1,1 @@
-from class5 import b
-print(b)
-a=1
-
+# from class import class6
