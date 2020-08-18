@@ -1,6 +1,6 @@
 '''
 客户端负责请求 发送内容
-# 创建socket
+# 创建socket1
 # 绑定地址及端口号
 # 输入文件名
 # 将文件名发送给服务端
@@ -15,8 +15,8 @@ def main():
     tcp_client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
     # 输入地址及端口号并链接
-    client_ip =input('请输入服务端的地址')
-    client_port = int(input('请输入服务端的端口号'))
+    client_ip =input('请输入服务端的地址:')
+    client_port = int(input('请输入服务端的端口号:'))
     tcp_client.connect((client_ip,client_port))
     print('服务器连接成功')
 
@@ -25,10 +25,15 @@ def main():
     tcp_client.send(send_data.encode('utf-8'))
 
     # 接收服务器的数据
-    recv_data = tcp_client.recvfrom(1024)
+    recv_data = tcp_client.recv(1024)
 
-    print('内容是：',recv_data[0].decode('utf-8'))
-
+    # print('内容是：',recv_data[0])
+    # recv_msg = recv_data[0]
+    # for i in recv_msg:
+    #     print(i.decode('utf-8'))
+    if recv_data:
+        with open(r".\222", "wb") as f:
+            f.write(recv_data)
     # 传输完成关闭套接字
     tcp_client.close()
 
