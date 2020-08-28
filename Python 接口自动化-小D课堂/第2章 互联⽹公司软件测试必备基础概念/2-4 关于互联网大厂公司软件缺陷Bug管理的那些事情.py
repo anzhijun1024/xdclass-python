@@ -1,0 +1,3 @@
+data = {"code":"0000","msg":"成功","data":[{"id":1,"name":"枸杞槟榔 槟榔贵族","shopId":"1581245941","mchKey":"GO7zSeARU0CHuWBjenlepg48w5Jr****","limitMoney":1950000.00,"remindMoney":1900000.00,"status":0,"thisMonth":5.281499186E7,"topMonth":4.586656189E7,"thisWeek":9796667.7,"topWeek":1.370208142E7,"today":1950016.96,"yesterday":1996576.18},{"id":2,"name":"湘潭铺子槟榔","shopId":"1565067801","mchKey":"1234567890qwertyuiopasdfghjk****","limitMoney":1950000.00,"remindMoney":1900000.00,"status":0,"thisMonth":8294070.76,"topMonth":1546039.68,"thisWeek":2194706.3,"topWeek":3054747.88,"today":323511.54,"yesterday":487421.72}],"timespan":0}
+
+print(data["data"][0]["today"])
